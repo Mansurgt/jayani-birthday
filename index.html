@@ -245,8 +245,7 @@ body{background:radial-gradient(ellipse at 50% 30%,#2a1458 0%,var(--navy) 70%) v
 
 <section class="page" id="p-song" aria-label="Birthday song">
   <div class="wrap">
-    <h1 class="title">A song for you first 🎶</h1>
-    <p class="hand" id="songStatus">Starting your birthday song…</p>
+    <h1 class="title">Let's celebrate the birthday 🎉</h1>
     <button class="btn pulse" id="playSong">Play the song</button>
     <button class="btn" data-next>Open Your Surprise</button>
   </div>
@@ -459,17 +458,15 @@ $('#unlockForm').addEventListener('submit',e=>{
   else{error.textContent='That passcode is not correct. Try again.'; input.select()}
 });
 hooks.song=()=>{
-  const playButton=$('#playSong'), status=$('#songStatus');
+  const playButton=$('#playSong');
   playButton.hidden=false;
   startMusic().then(playing=>{
     playButton.hidden=playing;
-    status.textContent=playing?'🎵 Your song is playing':'Tap to play your birthday song before the surprise.';
   });
 };
 $('#playSong').addEventListener('click',()=>{
   startMusic().then(playing=>{
     $('#playSong').hidden=playing;
-    $('#songStatus').textContent=playing?'🎵 Your song is playing':'The song could not start. Please try again.';
   });
 });
 
